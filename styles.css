@@ -1,0 +1,345 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    color: #fff;
+    padding-top: 50px;
+    display: flex;
+    font-size: 50px;
+    font-family: system-ui, -apple-system;
+    font-weight: 500;
+    justify-content: center;
+}
+.logo:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.5s;
+    color: #b4c0be;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Gauge styling */
+.gauge_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 30px;
+    background: #d2ffe6;
+    max-width: 560px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+	background: rgba(23, 23, 23, 0.275);
+	backdrop-filter: blur(20px);
+	border: 0px solid rgba(255, 255, 255, 0.25);
+  }
+  
+  .temperature{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .quality{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .gauge {
+    width: 100%;
+    max-width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    color: #004033;
+    border: 0px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.484);
+  }
+  
+  .gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+  }
+  
+  .gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #009578;
+    transform-origin: center top;
+    transform: rotate(0.25turn);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25%;
+    box-sizing: border-box;
+    font-size: 20px;
+  }
+  
+  .gauge_detail{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Or set height as per your requirement */
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#video-bg {
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.hero h1{
+    transform: scale(1.1);
+    transition: ease 0.5s;
+    color: #b4c0be;
+}
+
+/* Metrics Section */
+.metrics {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.metric {
+    text-align: center;
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 200px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+	background: rgba(23, 23, 23, 0.275);
+	backdrop-filter: blur(20px);
+	border: 0px solid rgba(255, 255, 255, 0.25);
+	border-radius: 10px;
+    color: #ffffff;
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric h2 {
+    margin-bottom: 10px;
+}
+
+.metric p {
+    margin-bottom: 20px;
+}
+
+/* Project Description Section */
+.project {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 100px 100px;
+    background-color: #E3FEF7;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project p {
+    color: #77B0AA;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.project p:hover {
+    color: #003C43;
+    cursor: pointer;
+}
+
+/* Team Members Section */
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.team-member {
+    margin: 20px;
+    max-width: 200px;
+    transition: transform 0.3s ease;
+    background-color: #135D66;
+    border-radius: 20px;
+    color: #77B0AA;
+    padding: 20px;
+    padding-bottom: 1px;
+}
+
+.team-member:hover {
+    transform: scale(1.1);
+    background-color: #77B0AA;
+    color: #ffffff;
+}
+
+.team-member img {
+    width: 80%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #666;
+}
+
+.description {
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 100px 100px 150px;
+    background-color: #E3FEF7;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #135D66;
+}
+
+.footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .project {
+        margin: 20px 20px;
+    }
+
+    .hero {
+        height: 170vh; /* Or set height as per your requirement */
+    }
+    .metrics {
+        margin-top: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .metric {
+        margin: 20px 20px;
+    }
+    .about{
+        margin: 20px 20px 150px; 
+    }
+    .logo {
+        color: #fff;
+        padding-top: 50px;
+        display: flex;
+        font-size: 24px;
+        justify-content: center;
+    }
+    .temperature, .quality{
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    .temperature{
+        margin-bottom: 50px;
+    }
+    .gauge{
+        width: auto;
+    }
+  }

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSense</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section id="home">
+        <div class="hero">
+            <div class="logo">AquaSense</div>
+            <video autoplay muted loop id="video-bg">
+                <source src="Video background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h1>Stay Informed, Stay Safe!</h1>
+            <!-- <div class="metrics">
+                <div class="metric" id="temperature">
+                    <h2>Temperature</h2>
+                    <p><span id="celsius"></span>&deg;C / <span id="fahrenheit"></span>&deg;F</p>
+                </div>
+                <div class="metric" id="tds-ec">
+                    <h2>TDS and EC</h2>
+                    <p>TDS: <span id="tds"></span> ppm</p>
+                    <p>EC: <span id="ec"></span> &micro;S/cm</p>
+                </div>
+            </div> -->
+            <div class="gauge_container">
+                <div class="temperature">
+                    <div class="gauge" id="C_gauge">
+                        <div id="C_gauge__body" class="gauge__body">
+                            <div id="C_gauge__fill" class="gauge__fill"></div>
+                            <div id="C_gauge__cover" class="gauge__cover"></div>
+                        </div>
+                        <div class="gauge_detail">Temperature Celsius</div>
+                    </div>
+
+                    <div class="gauge" id="F_gauge">
+                        <div class="gauge__body" id="F_gauge__body">
+                            <div class="gauge__fill" id="F_gauge__fill"></div>
+                            <div class="gauge__cover" id="F_gauge__cover"></div>
+                        </div>
+                        <div class="gauge_detail">Temperature Fahrenheit</div>
+                    </div>
+                </div>
+
+                <div class="quality">
+                    <div class="gauge" id="TDS_gauge">
+                        <div class="gauge__body" id="TDS_gauge__body">
+                            <div class="gauge__fill" id="TDS_gauge__fill"></div>
+                            <div class="gauge__cover" id="TDS_gauge__cover"></div>
+                        </div>
+                        <div class="gauge_detail">TDS</div>
+                    </div>
+
+                    <div class="gauge" id="EC_gauge">
+                        <div class="gauge__body" id="EC_gauge__body">
+                            <div class="gauge__fill" id="EC_gauge__fill"></div>
+                            <div class="gauge__cover" id="EC_gauge__cover"></div>
+                        </div>
+                        <div class="gauge_detail">EC</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="project">
+            <h2>Project Description</h2>
+            <p>The AquaSense project aims to provide real-time monitoring of water quality parameters, including Total
+                Dissolved Solids (TDS), temperature, and Electrical Conductivity (EC). Water quality is a critical
+                aspect of environmental health, agriculture, and various industrial processes. Monitoring these
+                parameters ensures the safety and efficiency of water usage.</p>
+
+            <p>The AquaSense website offers users the ability to monitor and track TDS, temperature, and EC levels in
+                water bodies such as lakes, rivers, and reservoirs. Using sensors and IoT devices, the project
+                continuously collects data and updates it in real-time on this website.</p>
+
+            <p>The project leverages Firebase Realtime Database to store and retrieve data seamlessly. Firebase offers a
+                scalable and reliable platform for real-time data synchronization, allowing users to access the most
+                recent water quality measurements instantly.</p>
+
+            <p>With AquaSense, users can stay informed about the quality of water resources, enabling them to make
+                informed decisions about water usage, conservation, and environmental management. Whether it's for
+                recreational activities, agricultural irrigation, or industrial processes, real-time monitoring of water
+                quality is essential for sustainable water management.</p>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="about">
+            <h2>About Us</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="./assets/profile.jpg" alt="Abhishek Singh">
+                    <h3>Abhishek Singh</h3>
+                    <p>Final year student of Electronics and Communication branch, SKIT</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/nama.jpeg" alt="Aabhas">
+                    <h3>Aabhas Nama</h3>
+                    <p>Final year student of Electronics and Communication branch, SKIT</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/sharma1.jpeg" alt="Abhishek Sharma">
+                    <h3>Abhishek Sharma</h3>
+                    <p>Final year student of Electronics and Communication branch, SKIT</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/amol.jpeg" alt="Amol Kumari">
+                    <h3>Amol Kumari</h3>
+                    <p>Final year student of Electronics and Communication branch, SKIT</p>
+                </div>
+
+            </div>
+
+            <p class="description">As students in the field of Electronics and Communication, we are passionate about
+                leveraging technology to address real-world challenges. AquaSense represents our commitment to
+                environmental sustainability and innovation in water quality monitoring.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#project">Project Description</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Copyright . All rights reserved by students.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- the scripts for products you want to access must be added-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6PsQgnGNwQTQkOpTKOMO4MuQ7yQzYiVI",
+            authDomain: "test-1-bcddf.firebaseapp.com",
+            databaseURL: "https://test-1-bcddf-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "test-1-bcddf",
+            storageBucket: "test-1-bcddf.appspot.com",
+            messagingSenderId: "977777408468",
+            appId: "1:977777408468:web:e7b84469b4d92e1a93be41"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+
+        // getting reference to the database
+        var database = firebase.database();
+
+        //getting reference to the data we want
+        var dataRef1 = database.ref('sensors/celsius');
+        var dataRef2 = database.ref('sensors/fahrenheit');
+        var dataRef3 = database.ref('sensors/tds');
+        var dataRef4 = database.ref('sensors/ec');
+
+        //fetch the data
+        dataRef1.on('value', function (getdata1) {
+            var Celsius = getdata1.val();
+            setCelsiusGaugeValue(C_gaugeElement, Celsius / 100);
+            // document.getElementById('celsius').innerHTML = Celsius;
+        })
+
+        dataRef2.on('value', function (getdata2) {
+            var Fahrenheit = getdata2.val();
+            setFahrenheitGaugeValue(F_gaugeElement, Fahrenheit);
+            // document.getElementById('fahrenheit').innerHTML = Fahrenheit ;
+        })
+        dataRef3.on('value', function (getdata3) {
+            var tdsData = getdata3.val();
+            setTDSGaugeValue(TDS_gaugeElement, tdsData / 1000);
+            // document.getElementById('tds').innerHTML = tdsData;
+        })
+        dataRef4.on('value', function (getdata4) {
+            var ecData = getdata4.val();
+            setECGaugeValue(EC_gaugeElement, ecData);
+            // document.getElementById('tds').innerHTML = tdsData;
+        })
+    </script>
+</body>
+
+</html>
